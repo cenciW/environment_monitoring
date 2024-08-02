@@ -47,7 +47,7 @@ void setup()
   pinMode(BTN_ESQ, INPUT_PULLUP);
   pinMode(BTN_DIR, INPUT_PULLUP);
   pinMode(BTN_OK, INPUT_PULLUP);
-  pinMode(LDRPIN, INPUT_PULLUP);
+  pinMode(LDRPIN, INPUT);
   pinMode(LEDPIN, OUTPUT);
 
   dht.begin();
