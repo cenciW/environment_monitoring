@@ -168,14 +168,16 @@ void define_temp()
   if (BTN_DIR == HIGH)
   {
     setPointTemp++;
-    if (setPointTemp >= 26) {
+    if (setPointTemp >= 26)
+    {
       setPointTemp = 26;
     }
   }
   if (BTN_ESQ == HIGH)
   {
     setPointTemp--;
-    if (setPointTemp <= 18) {
+    if (setPointTemp <= 18)
+    {
       setPointTemp = 18;
     }
   }
@@ -187,23 +189,27 @@ void define_temp()
 
 void loop()
 {
-  switch (currentState)
+  if (millis() - timer >= 1000)
   {
-  case STAND_BY:
-    stand_by();
-    break;
-  case MONITORAR_AMBIENTE:
-    monitorar_ambiente();
-    break;
-  case SAIR:
-    sair();
-    break;
-  case ESCOLHE_TEMP:
-    escolhe_temp();
-    break;
-  case DEFINE_TEMP:
-    define_temp();
-    break;
+    switch (currentState)
+    {
+      time = millis();
+    case STAND_BY:
+      stand_by();
+      break;
+    case MONITORAR_AMBIENTE:
+      monitorar_ambiente();
+      break;
+    case SAIR:
+      sair();
+      break;
+    case ESCOLHE_TEMP:
+      escolhe_temp();
+      break;
+    case DEFINE_TEMP:
+      define_temp();
+      break;
+    }
   }
 }
 
